@@ -4,5 +4,6 @@
 - prefix is `.`
 
 ## Version:
->1.0
-Progress: https://trello.com/b/phbHjyaX/fiona-developement-progress
+`1.0`
+
+Check the progress: https://trello.com/b/phbHjyaX/fiona-developement-progress
