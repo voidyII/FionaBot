@@ -1,27 +1,29 @@
 import discord
+from discord.ext import commands
 from dotenv import load_dotenv
 import os
 import message_handler
+import cmd_handler
 
-def login_msg():
+def client_run():
     # takes token and prefix into variables
     load_dotenv()
     TOKEN = os.getenv('TOKEN')
     PREFIX = os.getenv('PREFIX')
 
-    #client variable
-    client = discord.Client(intents=discord.Intents.all())
+    #bot variable
+    bot = commands.Bot(command_prefix=PREFIX, intents=discord.Intents.all())
 
     #when ready (fully booted) prints login text in terminal
-    @client.event
+    @bot.event
     async def on_ready():
-        print(f"Logged in as {client.user}")
+        print(f"Logged in as {bot.user}")
 
     #checks if msg received
-    @client.event
+    @bot.event
     async def on_message(message):
         # if msg author is client (aka fiona), return
-        if message.author == client.user:
+        if message.author == bot.user:
             return
 
         #puts msg content in string
@@ -29,9 +31,13 @@ def login_msg():
         user_message = str(message.content)
         channel = str(message.channel)
 
+        #prints message content for debugging purposes
+        print(user_message)
+
         #if prefix is not present, return
-        if user_message[0] != PREFIX:
-            return
+        if user_message[0] == PREFIX:
+            # needs to be changed to functioning return value
+            await cmd_handler.bot_commands()
 
         #write debug msg in terminal
         print(f"{username} wrote {user_message} in {channel}")
@@ -40,10 +46,10 @@ def login_msg():
         await message_handler.send_msg(message, user_message)
 
     #if new member joins, do sth (TBD)
-    @client.event
+    @bot.event
     async def on_member_join(member):
         # sth
         print("hello")
  
     #starts client
-    client.run(TOKEN)
+    bot.run(TOKEN)

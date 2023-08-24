@@ -1,7 +1,7 @@
 import event_handler
 
 def main():
-    event_handler.login_msg()
+    event_handler.client_run()
 
 if __name__ == "__main__":
     main()

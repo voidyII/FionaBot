@@ -2,19 +2,19 @@ from dotenv import load_dotenv
 import os
 
 # checks if prefix is present and if it is correct one
-def prefix_check(message):
-    load_dotenv()
-    PREFIX = os.getenv('PREFIX')
+# def prefix_check(message):
+#     load_dotenv()
+#     PREFIX = os.getenv('PREFIX')
 
-    message_prefix = message[0]
+#     message_prefix = message[0]
 
-    if message_prefix == PREFIX:
-        return True
-    else: 
-        return False
+#     if message_prefix == PREFIX:
+#         return True
+#     else: 
+#         return False
 
 def handle_all(message):
-    if prefix_check(message) == True:
+    # if prefix_check(message) == True:
         message = message[1:]
         msg_low = message.lower()
 
