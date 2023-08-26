@@ -1,10 +1,9 @@
 # Fiona Discord Bot README and Documentation
 ## Features:
-- she can send minecraft recipes (only supports pickaxe recipe currently)
+- she can send minecraft recipes (supported recipes can be found in recipes.txt (TBA))
 - prefix is `.`
 
 ## Version:
-`1.2`
-cogs are working now (code is still a mess, lots of comments that i have to delete/adjust but yeah)
+`1.3`
 
-Check the progress: https://trello.com/b/phbHjyaX/fiona-developement-progress
+Check the progress: https://trello.com/b/phbHjyaX/fiona-developement-progress (i'll update this soon)
