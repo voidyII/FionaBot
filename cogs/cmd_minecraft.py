@@ -1,10 +1,8 @@
 import discord
 from discord.ext import commands
-# from dotenv import load_dotenv
-# import os
 import rsp_minecraft
 
-class cmdCog(commands.Cog):
+class cmdMinecraft(commands.Cog):
     # initalises bot variable as self
     def __init__(self, bot):
         self.bot = bot
@@ -30,4 +28,4 @@ class cmdCog(commands.Cog):
         await ctx.send(f"Soon I will be able to list all the possible commands you can do with .minecraft! Just you wait, it's going to be great :PP")
 
 async def setup(bot):
-    await bot.add_cog(cmdCog(bot))
+    await bot.add_cog(cmdMinecraft(bot))
