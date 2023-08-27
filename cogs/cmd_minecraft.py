@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import rsp_minecraft
+import rcp_minecraft
 
 class cmdMinecraft(commands.Cog):
     # initalises bot variable as self
@@ -9,23 +9,21 @@ class cmdMinecraft(commands.Cog):
         self._last_member = None
 
     # minecraft command group
-    @commands.group()
+    @commands.group(invoke_without_command=True)
     async def minecraft(self, ctx):
-        print("minecraft command invoked")
+        await ctx.send("You forgot to specify what I should do, dummy!! >:/")
 
     # craft command (sends recipe)
-    @minecraft.command()
+    @minecraft.group(invoke_without_command=True)
     async def craft(self, ctx, arg):
-        recipe_to_send = rsp_minecraft.recipes(arg)
-
+        recipe_to_send = rcp_minecraft.recipes(arg)
         await ctx.send(f"Here's the recipe you wanted!! :3",file=recipe_to_send)
         print(f"sent {arg} recipe")
 
-    # does not work
-    @minecraft.command()
-    async def help(self, ctx, arg):
-        print(arg)
-        await ctx.send(f"Soon I will be able to list all the possible commands you can do with .minecraft! Just you wait, it's going to be great :PP")
+    @craft.command()
+    async def dye(self, ctx, arg):
+        dye_recipe_to_send = rcp_minecraft.colors(arg)
+        await ctx.send(f"Here's the recipe you wanted!! :3",file=dye_recipe_to_send)
 
 async def setup(bot):
     await bot.add_cog(cmdMinecraft(bot))
