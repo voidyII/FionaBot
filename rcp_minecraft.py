@@ -5,17 +5,46 @@ def recipes(material):
         # Workbench
         case "workbench": return discord.File("./recipe_img/CraftingTable/craft_workbench.png")
 
-        # Brewing
-        case "blazepowder": return discord.File("./recipe_img/CraftingTable/Brewing/craft_blazepowder.png")
-        case "brewingstand": return discord.File("./recipe_img/CraftingTable/Brewing/craft_brewingstand.png")
-        case "cauldron": return discord.File("./recipe_img/CraftingTable/Brewing/craft_cauldron.png")
-        case "fermentedSpiderEye": return discord.File("./recipe_img/CraftingTable/Brewing/craft_fermentedspidereye.png")
-        case "glassbottle": return discord.File("./recipe_img/CraftingTable/Brewing/craft_glassbottle.png")
-        case "blazepowder": return discord.File("./recipe_img/CraftingTable/Brewing/craft_glisteringmelon.png")
-        case "blazepowder": return discord.File("./recipe_img/CraftingTable/Brewing/craft_magmacream.png")
-
         # Building Blocks
+        case "andesite": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_andesite.png")
+        case "bambooplanks": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_bambooplanks.gif")
+        case "blueice": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_blockofquartz.png")
+        case "bookshelf": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_bookshelf.png")
+        case "brick": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_brick.png")
+        case "chain": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_chain.png")
+        case "coarsedirt": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_coarsedirt.png")
+        case "concretepowder": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_concretepowder.png")
+        case "conduit": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_conduit.png")
+        case "darkprismarine": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_darkprismarine.png")
+        case "diorite": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_diorite.png")
+        case "endstonebricks": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_endstonebricks.png")
+        case "glowstone": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_glowstone.png")
+        case "granite": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_granite.png")
+        case "haybale": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_haybale.png")
+        case "jack-o-lantern": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_jack-o-lantern.png")
+        case "mossstone": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_mossstone.gif")
+        case "mossystonebricks": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_mossystonebricks.gif")
+        case "mudbricks": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_mudbricks.png")
+        case "netherbrick": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_netherbrick.png")
+        case "packedice": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_packedice.png")
         case "planks": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_planks.gif")
+        case "prismarine": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_prismarine.png")
+        case "prismarinebricks": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_prismarinebricks.png")
+        case "purpurpillar": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_purpurpillar.png")
+        case "quartzbricks": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_quartzbricks.png")
+        case "rednetherbrick": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_rednetherbrick.png")
+        case "redsandstone": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_redsandstone.png")
+        case "sandstone": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_sandstone.png")
+        case "scaffolding": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_scaffolding.png")
+        case "sealantern": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_sealantern.png")
+        case "stainedglass": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_stainedglass.gif")
+        case "stonebrick": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_stonebrick.png")
+        case "stoneslabs": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_stoneslabs.gif")
+        case "stonestairs": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_stonestairs.gif")
+        case "tintedglass": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_tintedglass.png")
+        case "woodenslabs": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_woodenslabs.gif")
+        case "woodenstairs": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_woodenstairs.gif")
+        case "woolblock": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_woolblock.png")
 
         # Decoration Blocks
         case "chest": return discord.File("./recipe_img/CraftingTable/Decoration Blocks/craft_chest.png")
@@ -133,4 +162,50 @@ def colors(color):
         case "red": return discord.File("./recipe_img/CraftingTable/Dyes/craft_reddye.gif")
         case "white": return discord.File("./recipe_img/CraftingTable/Dyes/craft_whitedye.gif")
         case "yellow": return discord.File("./recipe_img/CraftingTable/Dyes/craft_yellowdye.gif")
-        
+
+def cut(cutblock):
+    match cutblock:
+        case "copper": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_cutcopper.png")
+        case "redsandstone": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_cutredsandstone.png")
+        case "sandstone": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_cutsandstone.png")
+
+def chiseled(chiseledblock):
+    match chiseledblock:
+        case "netherbricks": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_chiseledmetherbricks.png")
+        case "polishedblackstone": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_chiseledpolishedblackstone.png")
+        case "quartz": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_chiseledquartzblock.png")
+        case "redsandstone": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_chiseledredsandstone.png")
+        case "sandstone": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_chiseledsandstone.png")
+        case "stonebrick": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_chiseledstonebrick.png")
+
+def polished(polishedblock):
+    match polishedblock:
+        case "andesite": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_polishedandesite.png")
+        case "blackstone": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_polishedblackstone.png")
+        case "blackstonebricks": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_polishedblackstonebricks.png")
+        case "diorite": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_polisheddiorite.png")
+        case "granite": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_polishedgranite.png")
+
+def block(blocktype):
+    match blocktype:
+        case "amethyst": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_blockofamethyst.png")
+        case "copper": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_blockofcopper.png")
+        case "netherite": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_andesite.png")
+        case "quartz": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_blockofnetherite.png")
+        case "bone": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_boneblock.png")
+        case "clay": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_clayblock.png")
+        case "coal": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_coalblock.png")
+        case "diamond": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_diamondblock.png")
+        case "driedkelp": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_driedkelpblock.png")
+        case "dripstone": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_dripstoneblock.png")
+        case "emerald": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_emeraldblock.png")
+        case "gold": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_goldblock.png")
+        case "iron": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_ironblock.png")
+        case "lapis": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_lapislazuliblock.png")
+        case "magma": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_magmablock.png")
+        case "melon": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_melonblock.png")
+        case "netherwart": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_netherwartblock.png")
+        case "pillarquartz": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_pillarquartzblock.png")
+        case "purpur": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_purpurblock.png")
+        case "snow": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_snowblock.png")
+        case "waxedcopper": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_waxedblockofcopper.png")

@@ -4,7 +4,7 @@
 - prefix is `.`
 
 ## Version:
-`1.4`
-Recipe function to add: building/decoration blocks, redstone
+`1.4.2`
+Recipe function to add: decoration blocks, redstone
 
 Check the progress: https://trello.com/b/phbHjyaX/fiona-developement-progress (i'll update this soon)

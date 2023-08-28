@@ -24,6 +24,26 @@ class cmdMinecraft(commands.Cog):
     async def dye(self, ctx, arg):
         dye_recipe_to_send = rcp_minecraft.colors(arg)
         await ctx.send(f"Here's the recipe you wanted!! :3",file=dye_recipe_to_send)
+    
+    @craft.command()
+    async def cut(self, ctx, arg):
+        cutblock_recipe_to_send = rcp_minecraft.cut(arg)
+        await ctx.send(f"Here's the recipe you wanted!! :3",file=cutblock_recipe_to_send)
+
+    @craft.command()
+    async def chiseled(self, ctx, arg):
+        chiseledblock_recipe_to_send = rcp_minecraft.chiseled(arg)
+        await ctx.send(f"Here's the recipe you wanted!! :3",file=chiseledblock_recipe_to_send)
+
+    @craft.command()
+    async def polished(self, ctx, arg):
+        polishedblock_recipe_to_send = rcp_minecraft.polished(arg)
+        await ctx.send(f"Here's the recipe you wanted!! :3",file=polishedblock_recipe_to_send)
+
+    @craft.command()
+    async def block(self, ctx, arg):
+        block_recipe_to_send = rcp_minecraft.block(arg)
+        await ctx.send(f"Here's the recipe you wanted!! :3",file=block_recipe_to_send)
 
 async def setup(bot):
     await bot.add_cog(cmdMinecraft(bot))

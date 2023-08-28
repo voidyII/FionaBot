@@ -30,6 +30,8 @@ def client_run():
     async def on_command_error(ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
             await ctx.send("Are you kidding me??!! How often do I have to tell you to use specifiers for the command?!!! >:V")
+        
+        # not working/triggered
         if isinstance(error, commands.BadArgument):
             await ctx.send("Awwhh, did you make a typo? Better fix that up real quick and send it again :3<3")
         

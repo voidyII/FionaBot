@@ -9,11 +9,11 @@ class cmdHelp(commands.Cog):
 
     @commands.group(invoke_without_command=True)
     async def help(self, ctx):
-        await ctx.send("I am not able to help you right now, I'm sooo sorryyyy!!! :/")
+        await ctx.send("**__Commands:__**\n.help (shows this message)\n.minecraft (used to do minecraft related things)\n\nFor detailed information about a command type .help followed by the command\nExample: .help minecraft")
 
     @help.command()
     async def minecraft(self, ctx):
-        await ctx.send(f"Soon I will be able to list all the possible commands you can do with .minecraft! Just you wait, it's going to be great :PP")
+        await ctx.send(f"**__Minecraft Commands:__**\ncraft [item/specifier] (sends crafting recipe)")
 
 async def setup(bot):
     await bot.add_cog(cmdHelp(bot))
