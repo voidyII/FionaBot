@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import rcp_minecraft
+import json
 
 class cmdMinecraft(commands.Cog):
     # initalises bot variable as self
@@ -12,6 +13,25 @@ class cmdMinecraft(commands.Cog):
     @commands.group(invoke_without_command=True)
     async def minecraft(self, ctx):
         await ctx.send("You forgot to specify what I should do, dummy!! >:/")
+
+    @minecraft.command()
+    async def info(self, ctx, arg):
+        item_file = open("D:\Coding\FionaBot\item_data.json")
+        item_dat = json.load(item_file)
+        for item in item_dat:
+            if item.get("fiona_item_name") == arg:
+                if item.get("image") != None:
+                    img = discord.File(item.get("image"))
+                    name = item.get("name")
+                    id = item.get("item_id")
+                    stack = item.get("stack")
+                    await ctx.send(f"**Item Info:**\n", file=img)
+                    await ctx.send(f"Name: {name}\nItem ID: {id}\nStackability: {stack}")
+                else:
+                    name = item.get("name")
+                    id = item.get("item_id")
+                    stack = item.get("stack")
+                    await ctx.send(f"**Item Info:**\nName: {name}\nItem ID: {id}\nStackability: {stack}")
 
     # craft command (sends recipe)
     @minecraft.group(invoke_without_command=True)

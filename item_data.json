@@ -1,0 +1,6 @@
+[
+    {"image":null, "name":"Air", "item_id":"minecraft:air", "stack":64, "fiona_item_id":0, "fiona_item_name":"air"},
+    {"image":"./item_img/(1)_Stone.webp", "name":"Stone", "item_id":"minecraft:stone", "stack":64, "fiona_item_id":1, "fiona_item_name":"stone"},
+    {"image":"./item_img/(2)_Granite.webp", "name":"Granite", "item_id":"minecraft:granite", "stack":64, "fiona_item_id":2, "fiona_item_name":"granite"},
+    {"image":"./item_img/(3)_Polished_Granite.webp", "name":"Polished Granite", "item_id":"minecraft:polished_granite", "stack":64, "fiona_item_id":3, "fiona_item_name":"polishedgranite"}
+]
