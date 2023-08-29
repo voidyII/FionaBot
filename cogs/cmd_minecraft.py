@@ -20,18 +20,22 @@ class cmdMinecraft(commands.Cog):
         item_dat = json.load(item_file)
         for item in item_dat:
             if item.get("fiona_item_name") == arg:
+                if item.get("obtainable") == True:
+                    obtain = "yes"
+                else: obtain = "no"
+
                 if item.get("image") != None:
                     img = discord.File(item.get("image"))
                     name = item.get("name")
                     id = item.get("item_id")
                     stack = item.get("stack")
                     await ctx.send(f"**Item Info:**\n", file=img)
-                    await ctx.send(f"Name: {name}\nItem ID: {id}\nStackability: {stack}")
+                    await ctx.send(f"Name: {name}\nItem ID: {id}\nStackability: {stack}\nObtainable: {obtain}")
                 else:
                     name = item.get("name")
                     id = item.get("item_id")
                     stack = item.get("stack")
-                    await ctx.send(f"**Item Info:**\nName: {name}\nItem ID: {id}\nStackability: {stack}")
+                    await ctx.send(f"**Item Info:**\nName: {name}\nItem ID: {id}\nStackability: {stack}\nObtainable: {obtain}")
 
     # craft command (sends recipe)
     @minecraft.group(invoke_without_command=True)

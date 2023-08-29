@@ -49,7 +49,7 @@ def recipes(material):
         # Decoration Blocks
         case "chest": return discord.File("./recipe_img/CraftingTable/Decoration Blocks/craft_chest.png")
         case "fence": return discord.File("./recipe_img/CraftingTable/Decoration Blocks/craft_fence.gif")
-        case "furnace": return discord.File("./recipe_img/CraftingTable/Decoration Blocks/craft_furnace.png")
+        case "furnace": return discord.File("./recipe_img/CraftingTable/Decoration Blocks/craft_furnace.gif")
         case "shulkerBox": return discord.File("./recipe_img/CraftingTable/Decoration Blocks/craft_shulkerbox.png")
         case "torch": return discord.File("./recipe_img/CraftingTable/Decoration Blocks/craft_torch.png")
 
