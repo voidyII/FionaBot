@@ -9,6 +9,15 @@ class cmdMinecraft(commands.Cog):
         self.bot = bot
         self._last_member = None
 
+    
+    # example button
+    # @commands.command()
+    # async def button(self, ctx):
+    #     view = discord.ui.View()
+    #     botton = discord.ui.Button(label="test")
+    #     view.add_item(botton)
+    #     await ctx.send(view=view)
+
     # minecraft command group
     @commands.group(invoke_without_command=True)
     async def minecraft(self, ctx):
