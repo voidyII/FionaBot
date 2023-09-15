@@ -137,7 +137,7 @@ def recipes(material):
         case "book&quill": return discord.File("./recipe_img/CraftingTable/Misc/craft_bookandquill.png")
         case "bucket": return discord.File("./recipe_img/CraftingTable/Misc/craft_bucket.png")
         case "composter": return discord.File("./recipe_img/CraftingTable/Misc/craft_composter.png")
-        case "Endereye": return discord.File("./recipe_img/CraftingTable/Misc/craft_eyeofender.png")
+        case "endereye": return discord.File("./recipe_img/CraftingTable/Misc/craft_eyeofender.png")
         case "firecharge": return discord.File("./recipe_img/CraftingTable/Misc/craft_firecharge.png")
         case "fireworkRocket": return discord.File("./recipe_img/CraftingTable/Misc/craft_fireworkrocket.gif")
         case "fireworkStar": return discord.File("./recipe_img/CraftingTable/Misc/craft_fireworkstar.gif")
