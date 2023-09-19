@@ -54,6 +54,13 @@ def recipes(material):
         case "torch": return discord.File("./recipe_img/CraftingTable/Decoration Blocks/craft_torch.png")
 
         # Redstone
+        case "button": return discord.File("./recipe_img/CraftingTable/Redstone/craft_buttons.gif")
+        case "calibratedsculksensor": return discord.File("./recipe_img/CraftingTable/Redstone/craft_calibratedsculksensor.png")
+        case "daylightsensor": return discord.File("./recipe_img/CraftingTable/Redstone/craft_daylightsensor.png")
+        case "door": return discord.File("./recipe_img/CraftingTable/Redstone/craft_doors.gif")
+        case "dropper": return discord.File("./recipe_img/CraftingTable/Redstone/craft_dropper.png")
+        case "fencegate": return discord.File("./recipe_img/CraftingTable/Redstone/craft_fencegate.gif")
+        case "hopper": return discord.File("./recipe_img/CraftingTable/Redstone/craft_hopper.png")
 
         #Transportation
         case "activatorrail": return discord.File("./recipe_img/CraftingTable/Transportation/craft_activatorrail.png")
@@ -209,3 +216,4 @@ def block(blocktype):
         case "purpur": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_purpurblock.png")
         case "snow": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_snowblock.png")
         case "waxedcopper": return discord.File("./recipe_img/CraftingTable/Building Blocks/craft_waxedblockofcopper.png")
+        case "redstone": return discord.File("./recipe_img/CraftingTable/Redstone/craft_blockofredstone.png")
