@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import rcp_minecraft
+from cogfunctions import rcp_minecraft
 import json
 
 class cmdMinecraft(commands.Cog):
@@ -8,7 +8,6 @@ class cmdMinecraft(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self._last_member = None
-
     
     # example button
     # @commands.command()
@@ -25,7 +24,7 @@ class cmdMinecraft(commands.Cog):
 
     @minecraft.command()
     async def info(self, ctx, arg):
-        item_file = open("D:\Coding\FionaBot\item_data.json")
+        item_file = open(".\cogfunctions\item_data.json")
         item_dat = json.load(item_file)
         for item in item_dat:
             if item.get("fiona_item_name") == arg:

@@ -1,0 +1,10 @@
+[
+    {"image":null, "name":"Air", "item_id":"minecraft:air", "stack":64, "obtainable":false, "fiona_item_id":0, "fiona_item_name":"air"},
+    {"image":"cogfunctions/item_img/(01)_Stone.webp", "name":"Stone", "item_id":"minecraft:stone", "stack":64, "obtainable":true, "fiona_item_id":1, "fiona_item_name":"stone"},
+    {"image":"cogfunctions/item_img/(02)_Granite.webp", "name":"Granite", "item_id":"minecraft:granite", "stack":64, "obtainable":true, "fiona_item_id":2, "fiona_item_name":"granite"},
+    {"image":"cogfunctions/item_img/(03)_Polished_Granite.webp", "name":"Polished Granite", "item_id":"minecraft:polished_granite", "stack":64, "obtainable":true, "fiona_item_id":3, "fiona_item_name":"polishedgranite"},
+	{"image":"cogfunctions/item_img/(04)_Diorite.webp", "name":"Diorite", "item_id":"minecraft:diorite", "stack":64, "obtainable":true, "fiona_item_id":4, "fiona_item_name":"diorite"},
+	{"image":"cogfunctions/item_img/(05)_Polished_Diorite.webp", "name":"Polished Diorite", "item_id":"minecraft:polished_diorite", "stack":64, "obtainable":true, "fiona_item_id":5, "fiona_item_name":"polisheddiorite"},
+	{"image":"cogfunctions/item_img/(06)_Andesite.webp", "name":"Andesite", "item_id":"minecraft:andesite", "stack":64, "obtainable":true, "fiona_item_id":6, "fiona_item_name":"andesite"},
+	{"image":"cogfunctions/item_img/(07)_Polished_Andesite.webp", "name":"Diorite", "item_id":"minecraft:polished_andesite", "stack":64, "obtainable":true, "fiona_item_id":7, "fiona_item_name":"polishedandesite"}
+]
