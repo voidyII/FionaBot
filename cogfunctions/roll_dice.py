@@ -16,7 +16,7 @@ def d8():
     return roll_var
 
 def d10():
-    roll_var = random.randint(1, 10)
+    roll_var = random.randint(0, 9)
     print(roll_var)
     return roll_var
 
@@ -27,5 +27,10 @@ def d12():
 
 def d20():
     roll_var = random.randint(1, 20)
+    print(roll_var)
+    return roll_var
+
+def d100():
+    roll_var = random.randint(1, 100)
     print(roll_var)
     return roll_var
