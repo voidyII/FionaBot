@@ -40,6 +40,12 @@ def client_run():
     #     if isinstance(error, commands.BadArgument):
     #         await ctx.send("Awwhh, did you make a typo? Better fix that up real quick and send it again :3<3")
     
+    #if member joins, greets them
+    @bot.event
+    async def on_member_join(member):
+        chnl = await bot.fetch_channel(1142502285042253834)
+        await chnl.send(f"Omg omg, hiiiii {member.mention}!!! <3<3")
+
     # workflow for user message
     @bot.event
     async def on_message(message):
@@ -54,17 +60,11 @@ def client_run():
 
         # prints user, message and channel in terminal for debugging purposes
         print(f"{username} wrote {user_message} in {channel}")
-
+        
         if user_message[0] != PREFIX:
             await message_handler.send_msg(message, user_message)
         else:
             await bot.process_commands(message)
-
-    # if new member joins, greet them (TBD)
-    @bot.event
-    async def on_member_join(member):
-        # do sth here
-        print("hello")
  
     #starts client
     bot.run(TOKEN)
