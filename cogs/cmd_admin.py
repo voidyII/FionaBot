@@ -24,7 +24,7 @@ class cmdAdmin(commands.Cog):
             )
         
         i=0
-        while i < 3:
+        while i < len(arg_list[0])-1:
             emoji = arg_list[0][i]
             await moji.add_reaction(emoji)
             i = i + 2
@@ -32,6 +32,22 @@ class cmdAdmin(commands.Cog):
         roleargs = {"role1": arg_list[0][1], "role2": arg_list[0][3]}
 
         reac = await moji.channel.fetch_message(moji.id)
+        reac_list = reac.reactions
+        print(reac_list)
+
+        #for reaction in reac_list:
+            
+
+        i=0
+        k=1
+        while i < len(reac.reactions)-1:
+            emoji = f"emoji{k}"
+            reac_dic = {}
+            reac_dic.update(emoji = reac_list[i])
+            i = i + 2
+            k = k + 1
+
+        print(reac_dic)
 
         to_add = {
             "guild": moji.channel.guild.name,
@@ -41,10 +57,8 @@ class cmdAdmin(commands.Cog):
             "type": moji.channel.type,
             "msg_id": moji.id,
             "roles": roleargs,
-            "emoji": reac.reactions
+            #"emoji": reac_dic
         }
-
-        print(to_add)
 
         print("dic created")
 
