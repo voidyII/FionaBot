@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 import os
+import json
 import message_handler
 
 def client_run():
@@ -22,10 +23,11 @@ def client_run():
                 await bot.load_extension("cogs."+f[:-3])
         print(f"Loaded cogs")
 
-    # changes presence to 'playin .help'
+    # changes presence to 'playing .help'
     @bot.event
     async def on_connect():
         await bot.change_presence(activity=discord.Game(name=".help", type=3))
+        print("Playing .help")
 
     # error handling tests
     # @bot.event
@@ -61,10 +63,26 @@ def client_run():
         # prints user, message and channel in terminal for debugging purposes
         print(f"{username} wrote {user_message} in {channel}")
         
+        # gives message to handler (commands or no commands)
         if user_message[0] != PREFIX:
             await message_handler.send_msg(message, user_message)
         else:
             await bot.process_commands(message)
+
+    @bot.event
+    async def on_reaction_add(reaction, user):
+        msg_file = open(".\cogfunctions\msg_roles.json", "r")
+        msg_dat = json.load(msg_file)
+        
+        if user.id == bot.user.id:
+            return
+
+        # for entry in msg_dat:
+        #     if entry.get["chnl_id"] != reaction.message.channel.id:
+        #         return
+        #     if reaction.emoji ==
+
+
  
     #starts client
     bot.run(TOKEN)

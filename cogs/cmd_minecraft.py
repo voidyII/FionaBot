@@ -24,7 +24,7 @@ class cmdMinecraft(commands.Cog):
 
     @minecraft.command()
     async def info(self, ctx, arg):
-        item_file = open(".\cogfunctions\item_data.json")
+        item_file = open(".\cogfunctions\item_data.json", "r")
         item_dat = json.load(item_file)
         for item in item_dat:
             if item.get("fiona_item_name") == arg:

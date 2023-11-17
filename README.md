@@ -5,7 +5,7 @@
 - prefix is `.`
 
 ## Version:
-`1.5.2`
+`1.6.0`
 
 All available commands and subcommands can be found in commands.txt or below (TBA)
 
