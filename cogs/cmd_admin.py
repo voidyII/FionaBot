@@ -29,15 +29,17 @@ class cmdAdmin(commands.Cog):
             await moji.add_reaction(emoji)
             i = i + 2
 
+        def rolesList(list):
+            i = 1
+            while i < len(list[0])-1:
+                role = list[0][i]
+ 
         roleargs = {"role1": arg_list[0][1], "role2": arg_list[0][3]}
 
         reac = await moji.channel.fetch_message(moji.id)
         reac_list = reac.reactions
         print(reac_list)
-
-        #for reaction in reac_list:
             
-
         i=0
         k=1
         while i < len(reac.reactions)-1:

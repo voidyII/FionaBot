@@ -1,3 +1,4 @@
 [
-    {"buffer": 0}
+    {"buffer": 0},
+    {"guild": "MeinKraft", "guild_id": 1142501814894333996, "chnl": "msg-test", "chnl_id": 1143667730730459226, "type": ["text", 0], "msg_id": 1178059464172118089, "roles": {"role1": "Bot Tester", "role2": "Developer"}}
 ]
