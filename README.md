@@ -9,4 +9,4 @@
 
 All available commands and subcommands can be found in commands.txt or below (TBA)
 
-Check the progress: https://trello.com/b/phbHjyaX/fiona-developement-progress (i'll update this soon)
+Check the progress: https://trello.com/b/phbHjyaX/fiona-developement-progress (up to date)

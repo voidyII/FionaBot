@@ -1,6 +1,5 @@
 #import discord
 import response_handler
-import json
 
 # sends response
 async def send_msg(message, user_message):
