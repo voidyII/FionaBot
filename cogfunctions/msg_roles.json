@@ -1,4 +1,7 @@
 [
-    {"buffer": 0},
-    {"guild": "MeinKraft", "guild_id": 1142501814894333996, "chnl": "msg-test", "chnl_id": 1143667730730459226, "type": ["text", 0], "msg_id": 1178059464172118089, "roles": {"role1": "Bot Tester", "role2": "Developer"}}
+    {"cmd_name": "minecraft", "role_name": "Minecraft", "role_id": 1142878717631275040},
+    {"cmd_name": "dnd", "role_name": "DnD" ,"role_id": 1142877568471683152},
+    {"cmd_name": "mtg", "role_name": "MTG" ,"role_id": 1142878201845121044},
+    {"cmd_name": "sploon", "role_name": "Splatoon" ,"role_id": 1172984892213174352},
+    {"cmd_name": "bottester", "role_name": "Bot Tester", "role_id": 1174416387456909323}
 ]

@@ -2,10 +2,11 @@
 ## Features:
 - she can execute several minecraft commands
 - she can roll dice
+- she can assign roles
 - prefix is `.`
 
 ## Version:
-`1.6.4`
+`1.8`
 
 All available commands and subcommands can be found in commands.txt or below (TBA)
 
