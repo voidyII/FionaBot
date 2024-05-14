@@ -13,7 +13,7 @@ class cmdHelp(commands.Cog):
 
     @help.command()
     async def minecraft(self, ctx):
-        await ctx.send(f"**__Minecraft Commands:__**\n.minecraft craft [item/specifier] (sends crafting recipe)\n.minecraft info [item] (sends information about item)")
+        await ctx.send(f"**__Minecraft Commands:__**\n.minecraft craft [item/specifier] (sends crafting recipe)\n.minecraft info [item] (sends meta information about item)")
     
     @help.command()
     async def roll(self, ctx):

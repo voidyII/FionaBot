@@ -30,17 +30,17 @@ def client_run():
         print("Playing .help")
 
     # error handling tests
-    # @bot.event
-    # async def on_command_error(ctx, error):
-    #     if isinstance(error, commands.MissingRequiredArgument):
-    #         await ctx.send("Are you kidding me??!! How often do I have to tell you to use specifiers for the command?!!! >:V")
+    @bot.event
+    async def on_command_error(ctx, error):
+        if isinstance(error, commands.MissingRequiredArgument):
+            await ctx.send("Are you kidding me??!! How often do I have to tell you to use specifiers for the command?!!! >:V")
         
-    #     # not working/triggered
-    #     if isinstance(error, commands.CommandNotFound):
-    #         await ctx.send("I'm sorry, but that command doesn't seem to exist :/\nIf you're unsure what command to use, type .help and I'll try to help you as best as I can :3")
+        # not working/triggered
+        if isinstance(error, commands.CommandNotFound):
+            await ctx.send("I'm sorry, but that command doesn't seem to exist :/\nIf you're unsure what command to use, type .help and I'll try to help you as best as I can :3")
 
-    #     if isinstance(error, commands.BadArgument):
-    #         await ctx.send("Awwhh, did you make a typo? Better fix that up real quick and send it again :3<3")
+        if isinstance(error, commands.BadArgument):
+            await ctx.send("Awwhh, did you make a typo? Better fix that up real quick and send it again :3<3")
     
     #if member joins, greets them
     @bot.event
@@ -82,7 +82,5 @@ def client_run():
         #         return
         #     if reaction.emoji ==
 
-
- 
     #starts client
     bot.run(TOKEN)

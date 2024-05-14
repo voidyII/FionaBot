@@ -24,7 +24,7 @@ class cmdMinecraft(commands.Cog):
 
     @minecraft.command()
     async def info(self, ctx, arg):
-        item_file = open(".\cogfunctions\item_data.json", "r")
+        item_file = open("./cogfunctions/item_data.json", "r")
         item_dat = json.load(item_file)
         for item in item_dat:
             if item.get("fiona_item_name") == arg:
@@ -37,13 +37,13 @@ class cmdMinecraft(commands.Cog):
                     name = item.get("name")
                     id = item.get("item_id")
                     stack = item.get("stack")
-                    await ctx.send(f"**Item Info:**\n", file=img)
+                    await ctx.send(f"**Item Meta Info:**\n", file=img)
                     await ctx.send(f"Name: {name}\nItem ID: {id}\nStackability: {stack}\nObtainable: {obtain}")
                 else:
                     name = item.get("name")
                     id = item.get("item_id")
                     stack = item.get("stack")
-                    await ctx.send(f"**Item Info:**\nName: {name}\nItem ID: {id}\nStackability: {stack}\nObtainable: {obtain}")
+                    await ctx.send(f"**Item Meta Info:**\nName: {name}\nItem ID: {id}\nStackability: {stack}\nObtainable: {obtain}")
 
     # craft command (sends recipe)
     @minecraft.group(invoke_without_command=True)
