@@ -9,7 +9,7 @@ class cmdUwuify(commands.Cog):
 
     @commands.command()
     async def uwuify(self, ctx, *args):
-        return_string = uwuify_algorithms.convert_string(args)
+        return_string = uwuify_algorithms.uwuify_string(args)
         await ctx.send(f"{return_string}")
 
 

@@ -3,10 +3,11 @@
 - she can execute several minecraft commands
 - she can roll dice
 - she can assign roles
+- she can uwuify text (just the basics for now)
 - prefix is `.`
 
 ## Version:
-`1.8`
+`1.9`
 
 All available commands and subcommands can be found in commands.txt or below (TBA)
 

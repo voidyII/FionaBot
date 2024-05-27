@@ -1,8 +1,13 @@
 import random
 import string
 
-def convert_string(args):
-    #learn how to work with tuples man, this is terrible
-    args = ''.join(args)
-    converted_text = args.replace("l", "w")
-    return converted_text
+def uwuify_string(args):
+    #make this work better than whatever this shit is
+    args = ' '.join(args)
+    rm_love = args.replace("love", "luv")
+    rm_you = rm_love.replace("you", "u")
+    rm_na = rm_you.replace("na", "nya")
+    rm_no = rm_na.replace("no", "nyo")
+    rm_r = rm_no.replace("r", "w")
+    uwuified_text = rm_r.replace("l", "w")
+    return uwuified_text

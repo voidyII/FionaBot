@@ -6,6 +6,15 @@ class cmdRoll(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self._last_member = None
+
+    @commands.command(invoke_without_command=True)
+    async def coinflip(self, ctx, arg=None):
+        if (arg != None):
+            flip_coin = roll_dice.d2()
+            await ctx.send(f"Sorry fren, I only flip the coin once ^^\nAnd you got `{flip_coin}`, yayyyy :3")
+        else:
+            flip_coin = roll_dice.d2()
+            await ctx.send(f"`{flip_coin}` it is!!^^")
     
     @commands.group(invoke_without_command=True)
     async def roll(self, ctx):

@@ -12,6 +12,7 @@ def client_run():
     PREFIX = os.getenv('PREFIX')
 
     #bot variable
+    #intents are all enabled for developement purposes atm, once i release it to the public this will be changed
     bot = commands.Bot(command_prefix=PREFIX, help_command=None, intents=discord.Intents.all())
 
     #sends login msg in terminal and loads cogs

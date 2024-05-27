@@ -9,7 +9,7 @@ class cmdHelp(commands.Cog):
 
     @commands.group(invoke_without_command=True)
     async def help(self, ctx):
-        await ctx.send("**__Commands:__**\n.help (shows this message)\n.minecraft (used to do minecraft related things)\n.roll (rolls dice)\n.role[..] (does role related things)\n\nFor detailed information about a command type .help followed by the command\nExample: .help minecraft")
+        await ctx.send("**__Commands:__**\n.help (shows this message)\n.minecraft (used to do minecraft related things)\n.roll (rolls dice)\n.coinflip (flips a coin)\n.role (does role related things)\n\nFor detailed information about a command type .help followed by the command\nExample: .help minecraft")
 
     @help.command()
     async def minecraft(self, ctx):
@@ -18,6 +18,10 @@ class cmdHelp(commands.Cog):
     @help.command()
     async def roll(self, ctx):
         await ctx.send(f"**__Dice Rolls:__**\n.roll [die] [amount] (rolls dice certain amount of times)\nDie defaults to d6 without input. Amount defaults to 1 without input\nAvailable Dice:\nd4\nd6\nd8\nd10\nd12\nd20")
+
+    @help.command()
+    async def coinflip(self, ctx):
+        await ctx.send(f"**__Coinflip__**\n.coinflip (flips a coin)\n\nseriously idiot! what were you expecting??! >:(")
 
     @help.command()
     async def role(self, ctx):
