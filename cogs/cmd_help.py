@@ -17,7 +17,7 @@ class cmdHelp(commands.Cog):
     
     @help.command()
     async def roll(self, ctx):
-        await ctx.send(f"**__Dice Rolls:__**\n.roll [die] [amount] (rolls dice certain amount of times)\nDie defaults to d6 without input. Amount defaults to 1 without input\nAvailable Dice:\nd4\nd6\nd8\nd10\nd12\nd20")
+        await ctx.send(f"**__Dice Rolls:__**\n.roll [die] [amount] (rolls dice certain amount of times)\nDie defaults to d6 without input. Amount defaults to 1 without input\nAvailable Dice:\nd4\nd6\nd8\nd10\nd12\nd20\nd100")
 
     @help.command()
     async def coinflip(self, ctx):
@@ -26,6 +26,10 @@ class cmdHelp(commands.Cog):
     @help.command()
     async def role(self, ctx):
         await ctx.send(f"**__Role Commands:__**\n.role [rolename] (adds role to user)\n.rolerm [rolename] (removes role from user)\n\n__List of Roles:__\nMinecraft (invoked with 'minecraft')\nDungeons & Dragons (invoked with 'dnd')\nMagic: The Gathering (invoked with 'mtg')\nSplatoon (invoked with 'sploon')\nBot Tester (invoked with 'bottester')")
+
+    @help.command()
+    async def uwuify(self, ctx):
+        await ctx.send(f"**__Uwuifier__**\n.uwuify [text to uwuify] (uwuifies the given text)")
 
 async def setup(bot):
     await bot.add_cog(cmdHelp(bot))
