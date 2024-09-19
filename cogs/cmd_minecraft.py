@@ -37,6 +37,7 @@ class cmdMinecraft(commands.Cog):
                     name = item.get("name")
                     id = item.get("item_id")
                     stack = item.get("stack")
+                    #needs fixing so the pic is sent with msg
                     await ctx.send(f"**Item Meta Info:**\n", file=img)
                     await ctx.send(f"Name: {name}\nItem ID: {id}\nStackability: {stack}\nObtainable: {obtain}")
                 else:
