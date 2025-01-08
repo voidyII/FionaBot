@@ -30,7 +30,6 @@ class database(commands.Cog):
     async def add_guild(self, guild, cursor):
         bot = self.bot
         guild = await bot.fetch_guild(guild.id, with_counts=True)
-        # db_name = f"g{guild.id}"
         cursor.execute("USE active_data")
 
         created = guild.created_at.strftime("%Y-%m-%d %H:%M:%S")
@@ -57,7 +56,6 @@ class database(commands.Cog):
     #     bot = self.bot
 
     def remove_guild(guild, cursor):
-        # db_name = f"g{guild.id}"
         cursor.execute(f"USE active_data")
         cursor.execute(f"DELETE FROM active_guilds WHERE guild_id={guild.id}")
         print(f"removed guild with id {guild.id} from table active_guilds")
