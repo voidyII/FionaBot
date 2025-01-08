@@ -2,7 +2,11 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 import os
+import datetime
 from .db_handler import database
+
+db_connect = database.connect_db()
+db_cursor = db_connect.cursor()
 
 class events(commands.Cog):
     # initalises bot variable as self
@@ -10,16 +14,40 @@ class events(commands.Cog):
         self.bot = bot
         self._last_member = None
 
+    old_date = '2025-01-08 00:42:26'
+
+    # @commands.Cog.listener()
+    # async def on_ready(self):
+    #     db_cursor = database.connect_db()
+
+    if old_date < datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"):
+        async def daily_guild_update(self, guild):
+            await database.update_guild_all(self, guild, db_cursor)
+            db_connect.commit()
+            print("daily guild updates done")
+
     @commands.Cog.listener()
     async def on_guild_join(self, guild):
-        database.add_guild(guild)
+        await database.add_guild(self, guild, db_cursor)
+        db_connect.commit()
         print("finished adding guild")
+
+    @commands.Cog.listener()
+    async def on_guild_update(self, guild_pre, guild_post):
+        await database.update_guild_one(self, guild_post, db_cursor)
+        db_connect.commit()
+        print(f"updated guild with id {guild_post.id}")
+    
+    @commands.Cog.listener()
+    async def on_guild_remove(self, guild):
+        database.remove_guild(guild, db_cursor)
+        db_connect.commit()
+        print("finished removing guild")
 
     # currently just a debug listener, TODO: expand functionality
     @commands.Cog.listener()
     async def on_message(self, message):
         bot = self.bot
-        PREFIX = os.getenv('PREFIX')
 
         # if msg author is bot, return
         if message.author == bot.user:

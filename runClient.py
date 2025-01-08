@@ -8,7 +8,7 @@ def login_run():
     load_dotenv()
     TOKEN = os.getenv('TOKEN')
     PREFIX = os.getenv('PREFIX')
-    OWNERID = os.getenv('OWNER_ID')
+    OWNERID = os.getenv('OWNER_UID')
 
     #bot variable
     #intents are all enabled for developement purposes
@@ -29,7 +29,7 @@ def login_run():
         for folder in os.listdir(cog_path):
             for file in os.listdir(f"{cog_path}/{folder}"):
                 if file.endswith(".py"):
-                    print((f"{folder}.{file[:-3]}"))
+                    # print((f"{folder}.{file[:-3]}"))
                     await bot.load_extension(f"cogs.{folder}.{file[:-3]}")
         print(f"Loaded cogs")
 
