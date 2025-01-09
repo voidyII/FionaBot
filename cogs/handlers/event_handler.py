@@ -1,10 +1,17 @@
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from apscheduler.triggers.cron import CronTrigger
 import discord
-from discord.ext import commands
+from discord.ext import commands, tasks
 from dotenv import load_dotenv
 from .db_handler import database
+import os
+import json
+import datetime
 
 db_connect = database.connect_db()
 db_cursor = db_connect.cursor()
+__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+scheduled_time = datetime.time(hour=12, minute=00, second=00)
 
 class events(commands.Cog):
     # initalises bot variable as self
@@ -12,27 +19,69 @@ class events(commands.Cog):
         self.bot = bot
         self._last_member = None
 
-    # async def daily_guild_update(self, guild):
-    #     await database.update_guild_all(self, guild, db_cursor)
-    #     db_connect.commit()
-    #     print("daily guild updates done")
+    # updates the database at 12:00:00 every day (if bot is running during that time)
+    @tasks.loop(time=scheduled_time)
+    async def on_date_check(self):
+        with open(os.path.join(__location__, 'date.json'), "r+") as date_file:
+            last_update = json.load(date_file)
 
+        await database.update_guild_all(self, db_cursor)
+        db_connect.commit()
+
+        now = datetime.datetime.now()
+        time = now.strftime("%Y-%m-%d")
+        full_time = now.strftime("%Y-%m-%d %H:%M:%S")
+
+        last_update["last_update"] = time
+        last_update["full_last_update"] = full_time
+
+        with open(os.path.join(__location__, 'date.json'), "w") as new_date_file:
+            json.dump(last_update, new_date_file)
+
+        print("daily update complete")
+
+    @commands.Cog.listener()
+    async def on_ready(self):
+        with open(os.path.join(__location__, 'date.json'), "r+") as date_file:
+            last_update = json.load(date_file)
+
+        now = datetime.datetime.now()
+        time = now.strftime("%Y-%m-%d")
+        full_time = now.strftime("%Y-%m-%d %H:%M:%S")
+
+        if last_update.get("last_update") < time:
+            await database.update_guild_all(self, db_cursor)
+            db_connect.commit()
+
+            last_update["last_update"] = time
+            last_update["full_last_update"] = full_time
+
+            with open(os.path.join(__location__, 'date.json'), "w") as new_date_file:
+                json.dump(last_update, new_date_file)
+
+            print("on_ready complete")
+
+        else: print("No on_ready update needed")
+        
     @commands.Cog.listener()
     async def on_guild_join(self, guild):
         await database.add_guild(self, guild, db_cursor)
         db_connect.commit()
+
         print("finished adding guild")
 
     @commands.Cog.listener()
     async def on_guild_update(self, guild_pre, guild_post):
-        await database.update_guild_one(self, guild_post, db_cursor)
+        await database.update_guild_on_update(self, guild_post, db_cursor)
         db_connect.commit()
+
         print(f"updated guild with id {guild_post.id}")
     
     @commands.Cog.listener()
     async def on_guild_remove(self, guild):
         database.remove_guild(guild, db_cursor)
         db_connect.commit()
+
         print("finished removing guild")
 
     # currently just a debug listener, TODO: expand functionality

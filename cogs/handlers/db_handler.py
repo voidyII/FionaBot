@@ -39,7 +39,7 @@ class database(commands.Cog):
         cursor.execute(f"INSERT INTO active_guilds VALUES({guild.id}, '{guild.name}', {guild.owner_id}, '{created}', {guild.approximate_member_count}, '{time}');")
         print(f"added guild with id {guild.id} to table active_guilds")
 
-    async def update_guild_one(self, guild_to_update, cursor):
+    async def update_guild_on_update(self, guild_to_update, cursor):
         bot = self.bot
         guild_new = await bot.fetch_guild(guild_to_update.id, with_counts=True)
 
@@ -52,8 +52,22 @@ class database(commands.Cog):
                         WHERE guild_id={guild_new.id}")
         
 
-    # async def update_guild_all(self):
-    #     bot = self.bot
+    async def update_guild_all(self, cursor):
+        bot = self.bot
+        cursor.execute("USE active_data")
+        cursor.execute("SELECT guild_id FROM active_guilds")
+        
+        guilds_to_update = cursor.fetchall()
+
+        now = datetime.datetime.now()
+        update_time = now.strftime("%Y-%m-%d %H:%M:%S")
+
+        for elem in guilds_to_update:
+            for id in elem:
+                guild_updated = await bot.fetch_guild(id, with_counts=True)
+                cursor.execute(f"UPDATE active_guilds \
+                                SET guild_name='{guild_updated.name}', owner_id={guild_updated.owner_id}, member_count={guild_updated.approximate_member_count}, last_update='{update_time}' \
+                                WHERE guild_id={id}")
 
     def remove_guild(guild, cursor):
         cursor.execute(f"USE active_data")

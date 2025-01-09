@@ -14,17 +14,11 @@ def login_run():
     #intents are all enabled for developement purposes
     bot = commands.Bot(command_prefix=PREFIX, help_command=None, intents=discord.Intents.all(), owner_id = OWNERID)
 
-
-    # changes presence to 'playing .help'
+    # changes presence to 'playing .help' and loads cogs
     @bot.event
     async def on_connect():
         await bot.change_presence(activity=discord.Game(name=".help", type=3))
         print("Playing .help")
-    
-    #sends login msg in terminal and loads cogs
-    @bot.event
-    async def on_ready():
-        print(f"Logged in as {bot.user}")
         cog_path = "./cogs"
         for folder in os.listdir(cog_path):
             for file in os.listdir(f"{cog_path}/{folder}"):
@@ -32,6 +26,11 @@ def login_run():
                     # print((f"{folder}.{file[:-3]}"))
                     await bot.load_extension(f"cogs.{folder}.{file[:-3]}")
         print(f"Loaded cogs")
+    
+    #sends login msg in terminal 
+    @bot.event
+    async def on_ready():
+        print(f"Logged in as {bot.user}")
 
     bot.run(TOKEN)
 
