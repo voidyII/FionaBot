@@ -13,7 +13,6 @@ class database(commands.Cog):
     # initalises bot variable as self
     def __init__(self, bot):
         self.bot = bot
-        self._last_member = None
 
     def connect_db():
         mydb = mysql.connector.connect(

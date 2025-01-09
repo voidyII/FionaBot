@@ -5,7 +5,6 @@ class cmdHelp(commands.Cog):
     # initalises bot variable as self
     def __init__(self, bot):
         self.bot = bot
-        self._last_member = None
     
     @commands.group(invoke_without_command=True)
     async def help(self, ctx):

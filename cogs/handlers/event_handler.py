@@ -11,13 +11,16 @@ import datetime
 db_connect = database.connect_db()
 db_cursor = db_connect.cursor()
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
-scheduled_time = datetime.time(hour=12, minute=00, second=00)
+scheduled_time = datetime.time(hour=12, minute=00, second=00, tzinfo=datetime.timezone.utc)
 
 class events(commands.Cog):
     # initalises bot variable as self
     def __init__(self, bot):
         self.bot = bot
-        self._last_member = None
+        self.on_date_check.start()
+    
+    def cog_unload(self):
+        self.on_date_check.cancel()
 
     # updates the database at 12:00:00 every day (if bot is running during that time)
     @tasks.loop(time=scheduled_time)
