@@ -62,7 +62,7 @@ class events(commands.Cog):
             with open(os.path.join(__location__, 'date.json'), "w") as new_date_file:
                 json.dump(last_update, new_date_file)
 
-            print("on_ready complete")
+            print("on_ready update complete")
 
         else: print("No on_ready update needed")
         

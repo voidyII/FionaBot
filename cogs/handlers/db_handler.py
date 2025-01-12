@@ -57,10 +57,18 @@ class database(commands.Cog):
         cursor.execute("SELECT guild_id FROM active_guilds")
         
         guilds_to_update = cursor.fetchall()
+        current_guilds = bot.guilds
 
         now = datetime.datetime.now()
         update_time = now.strftime("%Y-%m-%d %H:%M:%S")
 
+        for guild in current_guilds:
+            for elems in guilds_to_update:
+                if guild.id in elems:
+                    continue
+                else:
+                    await database.add_guild(self, guild, cursor)
+        
         for elem in guilds_to_update:
             for id in elem:
                 guild_updated = await bot.fetch_guild(id, with_counts=True)
