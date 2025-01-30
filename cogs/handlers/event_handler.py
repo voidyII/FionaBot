@@ -68,7 +68,8 @@ class events(commands.Cog):
         
     @commands.Cog.listener()
     async def on_guild_join(self, guild):
-        await database.add_guild(self, guild, db_cursor)
+        id = guild.id
+        await database.add_guild(self, id, db_cursor)
         db_connect.commit()
 
         print("finished adding guild")
@@ -82,7 +83,8 @@ class events(commands.Cog):
     
     @commands.Cog.listener()
     async def on_guild_remove(self, guild):
-        database.remove_guild(guild, db_cursor)
+        id = guild.id
+        database.remove_guild(id, db_cursor)
         db_connect.commit()
 
         print("finished removing guild")
