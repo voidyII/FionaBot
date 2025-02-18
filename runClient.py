@@ -25,6 +25,7 @@ def login_run():
                 if file.endswith(".py"):
                     # print((f"{folder}.{file[:-3]}"))
                     await bot.load_extension(f"cogs.{folder}.{file[:-3]}")
+                    print(f"Loaded {file}")
         print(f"Loaded cogs")
     
     #sends login msg in terminal 
