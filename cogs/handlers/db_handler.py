@@ -30,7 +30,7 @@ class database(commands.Cog):
     async def add_guild(self, id, cursor):
         bot = self.bot
         guild = await bot.fetch_guild(id, with_counts=True)
-        cursor.execute(f"CREATE TABLE g{guild.id} (user_id int(13))")
+        cursor.execute(f"CREATE TABLE g{guild.id}")
 
         created = guild.created_at.strftime("%Y-%m-%d %H:%M:%S")
         now = datetime.datetime.now()
